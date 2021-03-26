@@ -10,10 +10,10 @@ const App = () => {
             <h2>What can I do?</h2>
             <p>{activity}</p>
             <div>
-                <button onClick={() => { /* todo - update value of activity to some different */ }}>
+                <button onClick={() => { setActivity('Write a poem') }}>
                     Next activity
                 </button>
-                <button onClick={() => { /* todo - display message 'I am not bored anymore' instead of activity */ }}>
+                <button onClick={() => { setActivity('I am not bored anymore') }}>
                     I'm not bored anymore
                 </button>
             </div>
