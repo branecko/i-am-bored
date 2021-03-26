@@ -1,0 +1,24 @@
+.App {
+    width: 400px;
+    padding: 36px; /* vnutore odsadenie */
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: white;
+    margin: 32px auto; /* 'auto' je kuzlo ako vycentrovat nas App stvorec v ramci stranky */
+    text-align: center; /* vycentrovanie textu v ramci stvorca */
+}
+
+h2 {
+    padding-top: 12px;
+    font-size: 20px;
+}
+
+.App .activity {
+    margin-top: 36px;
+}
+
+.App .bored-buttons {
+    padding-top: 30px;
+}
+
+
