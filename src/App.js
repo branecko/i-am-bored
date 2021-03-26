@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 
 const App = () => {
 
@@ -33,12 +35,19 @@ const App = () => {
             <h2>What can I do?</h2>
             <p>{activity}</p>
             <div>
-                <button onClick={getActivityFromServer}>
+                <Button
+                    variant="outline-primary"
+                    onClick={getActivityFromServer}
+                >
                     Next activity
-                </button>
-                <button onClick={() => { setActivity('I am not bored anymore') }}>
+                </Button>
+                {' ' /* toto je len male klamstvo aby som dostal mini medzeru medzi buttony :-) */}
+                <Button 
+                    variant="outline-success"
+                    onClick={() => { setActivity('I am not bored anymore') }}
+                >
                     I'm not bored anymore
-                </button>
+                </Button>
             </div>
         </div>
     );
