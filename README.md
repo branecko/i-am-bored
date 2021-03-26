@@ -121,3 +121,11 @@ export const Header() {
 }
 ```
 
+## CO DALEJ ??
+- rozsirte appku o dalsiu funkcionalitu ak chcete (mne sa uz minuli napady)
+- skuste ostylovat aj stare ulohy z minulych dni napr. predpoved pocasia
+- mozete vytvorit vlastnu appku, ktora bude citat nejake verejne API. nejaky zoznam som nasiel tu: https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/
+- pozrite sa na oficialny navod na react a skuste si ho spravit: https://reactjs.org/tutorial/tutorial.html 
+- ostylujte nasu todo appku (budete mat menej roboty posledny tyzden)
+- skusajte skusajte skusajte a nenechajte sa odradit prvotnymi neuspechmi.
+- pytajte sa
