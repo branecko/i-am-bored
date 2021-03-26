@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
+import myBoredImage from './bored.jpg';
+import myHappyImage from './happy.jpeg';
+import './App.css';
 
 const App = () => {
 
@@ -32,11 +37,27 @@ const App = () => {
     );
 
     return (
-        <div>
+        <div className="App">
             <h1>I am so bored...</h1>
+
+            <Image
+                rounded
+                src={activity === 'I am not bored anymore' ? myHappyImage : myBoredImage}
+                width="320"
+                height="150"
+                alt="bored kitty"
+            />
+
             <h2>What can I do?</h2>
-            <p>{activity}</p>
-            <div>
+
+            <Alert
+                className="activity"
+                variant={activity === 'I am not bored anymore' ? 'success' : 'primary'}
+            >
+                {activity}
+            </Alert>
+            
+            <div className="bored-buttons">
                 <Button
                     variant="outline-primary"
                     onClick={getActivityFromServer}
