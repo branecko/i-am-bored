@@ -54,7 +54,7 @@ Stranka boredapi.com nam ponuka API, ktore je zadarmo a pouzijeme ho na ziskanie
 ```
 - (pozn. odpoved zo servera nazvem `data`) ulozte hodnotu z `data.activity` do nasho `useState` v App.js - to vypise hodnotu zo serveru na nasu stranku.
 - implementujte toto volanie API, tak aby sa zavolal server a ulozilo hodnotu activity do useState:
-  - Automaticky ihned po nacitani aplikacie (pomocka - useEffect)
+  - Automaticky ihned po nacitani aplikacie (pomocka - useEffect + useCallback)
   - Po kliknuti na button (pomocka - onClick)
 
 3. **Kniznica komponentov React-bootstrap**
