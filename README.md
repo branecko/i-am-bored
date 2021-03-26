@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# I AM BORED !!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bored je webova aplikacia, ktora nam navrhne co mozeme robit ked sa nudime.
 
-## Available Scripts
+## Vasa uloha:
 
-In the project directory, you can run:
+1. Naklonujte tento repozitar
+```
+git clone https://github.com/branecko/i-am-bored.git
+```
 
-### `npm start`
+2. Vstupte do noveho priecinka `i-am-bored`
+```
+cd i-am-bored
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Nainstalujte vsetky zavislosti
+```
+npm install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. Spustite lokalny server:
+```
+npm start
+```
 
-### `npm test`
+## Do tohto projektu doplnte:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> V tomto projekte budete upravovat subor `App.js`, nie `index.js`!
 
-### `npm run build`
+1. **FUNKCIONALITA**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Nasa aplikacia zatial nie je kompletna. Mala by obsahovat nasledovnu funkcionalitu:
+- Zatial zobrazujeme len jednu ulohu, ktora je aktualne uchovana v App.js pomocou `useState()`. Implementujte `onClick` funkcie na buttonoch (co maju robit je napisane pri nich v komentari).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **ZISKAJTE INFORMACIE ZO SERVERU**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Stranka boredapi.com nam ponuka API, ktore je zadarmo a pouzijeme ho na ziskanie navrhu aktivity, ktoru nam bude aplikacia zobrazovat. Vyhodou tejto stranky je, ze nemusime riesit ziadnu autorizaciu/povolenia/prihlasovanie ale rovno zavolame url pomocou kniznice axios. Viac informacii najdete v ich dokumentacii: https://www.boredapi.com/documentation
 
-### `npm run eject`
+- nainstalujte kniznicu axios `npm install axios`
+- importujte axios do nasho projektu (App.js)
+- skuste vykonat `GET` request na url `https://www.boredapi.com/api/activity`
+- do konzoly skuste vylogovat objekt, ktory vam vrati tento request. Mal by vyzerat priblizne takto:
+```
+{
+  "activity": "Listen to your favorite album",
+  "type": "music",
+  "participants": 1,
+  "price": 0.08,
+  "link": "",
+  "key": "3136729",
+  "accessibility": 0.2
+}
+```
+- (pozn. odpoved zo servera nazvem `data`) ulozte hodnotu z `data.activity` do nasho `useState` v App.js - to vypise hodnotu zo serveru na nasu stranku.
+- implementujte toto volanie API, tak aby sa zavolal server a ulozilo hodnotu activity do useState:
+  - Automaticky ihned po nacitani aplikacie (pomocka - useEffect)
+  - Po kliknuti na button (pomocka - onClick)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. **Kniznica komponentov React-bootstrap**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Komponenty nemusime vytvarat sami. Existuje vela komponentov, ktore casto pouzivame (buttony, nadpisy, input fieldy) a na internete mozeme najst velke mnozstvo kniznic, ktore pre nas vytvorili taketo komponenty. Rozdielom medzi beznym html elementom `<button>` a komponentom (ktory si vytvorime alebo ho niekto vytvoril) `<Button>` je taky, ze komponent moze mat nejake pridanu (doprogramovanu) funkcionalitu a hlavne pekne styly. Pomocou props mozeme lahko menit ako ma tento `<Button >` vyzerat.
+```
+    <Button variant="primary" size="lg">Click me</Button>
+    <Button variant="light">Click me</Button>
+```
+Velmi zname kniznice su napr.:
+- https://react-bootstrap.github.io/
+- https://material-ui.com/
+- https://ant.design/docs/react/introduce
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+My pouzijeme react-boostrap:
+- mozete pokracovat podla tejto stranky https://react-bootstrap.github.io/getting-started/introduction alebo ja zhrniem par bodov
+- nainstalujte si potrebne kniznice (`bootstrap` je cista css/javascript kniznica, ked chceme pouzivat bootstrap, ktory obsahuje react komponenty musime nainstalovat aj `react-bootstrap`)
+```
+npm install react-bootstrap bootstrap
+```
+- podla navodu z linku vyssie (treba citat dokumentacie, vela sa z nich dozvieme) pridajte css subor do suboru index.js alebo App.js (tento subor sme stiahli pomocou predchadzajuceho prikazu a je schovany v priecinku `node_modules`). Ak skopirujete nasledujuci riadok, nas projekt vie kde ho ma hladat. (netreba specifikovat cestu do priecinka node_modules)
+```
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+- v App.js importujte button a pouzite
+```
+    import Button from 'react-bootstrap/Button';
+    // alebo
+    import { Button } from 'react-bootstrap';
+```
+- vymente html elementy button za novy komponent Button. Rozne varianty najdete v dokumentacii: https://react-bootstrap.github.io/components/buttons/
+```
+    <Button></Button> // namiesto <button></button>
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- precitajte si co vsetko za nas dokaze Bootstrap spravit:
+  - pomocou grid vieme lahko navrhnut rozlozenie stranky pomocou riadkov/stlpcov https://react-bootstrap.github.io/layout/grid/
+  - zoznam komponentov: https://react-bootstrap.github.io/components/alerts
 
-## Learn More
+4. **CSS STYLING** 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Pridajte css styly do tejto React aplikacie. 
+- vytvorte css subor napr. `styles.css` alebo `App.css` vo vasom `src` priecinku.
+- importujte tento subor do niektoreho `js` suboru (App alebo index)
+```
+import './styles.css';
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Teraz mate volnu roku napr:
+- farebne pozadie,
+- velkosti a farba pisma
+- text mozete vycentrovat na stred obrazovky
+- kludne si mozete pomocou aj komponentami z react bootstrap
+- pridajte aj nejake obrazky. (mozete pouzit html element `<img>` alebo react-bootstrap komponent `<Image>` https://react-bootstrap.github.io/components/images/ )Nizsie je ukazka kodu ako pridat obrazok do React komponentu (jeden obrazok som vam pridaj aj sem do repozitara a vola sa `bored.jpg`)
+```
+import React from 'react';
+import logo from './logo.png'; // import image
 
-### Code Splitting
+export const Header() {
+  // Import result is the URL of your image
+  return <img src={logo} alt="Logo" />;
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

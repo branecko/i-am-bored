@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    const [ activity, setActivity ] = useState('Share positive feedback about your great React teachers. 🙌')
+
+    return (
+        <div>
+            <h1>I am so bored...</h1>
+            <h2>What can I do?</h2>
+            <p>{activity}</p>
+            <div>
+                <button onClick={() => { /* todo - update value of activity to some different */ }}>
+                    Next activity
+                </button>
+                <button onClick={() => { /* todo - display message 'I am not bored anymore' instead of activity */ }}>
+                    I'm not bored anymore
+                </button>
+            </div>
+        </div>
+    );
 }
 
 export default App;
