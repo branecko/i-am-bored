@@ -2,7 +2,7 @@
 
 Bored je webova aplikacia, ktora nam navrhne co mozeme robit ked sa nudime.
 
-![](https://github.com/branecko/i-am-bored/boredapp.png)
+![boredapp.png](./boredapp.png)
 
 ## Vasa uloha:
 
