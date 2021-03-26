@@ -35,6 +35,8 @@ npm start
 Nasa aplikacia zatial nie je kompletna. Mala by obsahovat nasledovnu funkcionalitu:
 - Zatial zobrazujeme len jednu ulohu, ktora je aktualne uchovana v App.js pomocou `useState()`. Implementujte `onClick` funkcie na buttonoch (co maju robit je napisane pri nich v komentari).
 
+Riesenie: https://github.com/branecko/i-am-bored/pull/1/files 
+
 2. **ZISKAJTE INFORMACIE ZO SERVERU**
 
 Stranka boredapi.com nam ponuka API, ktore je zadarmo a pouzijeme ho na ziskanie navrhu aktivity, ktoru nam bude aplikacia zobrazovat. Vyhodou tejto stranky je, ze nemusime riesit ziadnu autorizaciu/povolenia/prihlasovanie ale rovno zavolame url pomocou kniznice axios. Viac informacii najdete v ich dokumentacii: https://www.boredapi.com/documentation
@@ -58,6 +60,8 @@ Stranka boredapi.com nam ponuka API, ktore je zadarmo a pouzijeme ho na ziskanie
 - implementujte toto volanie API, tak aby sa zavolal server a ulozilo hodnotu activity do useState:
   - Automaticky ihned po nacitani aplikacie (pomocka - useEffect + useCallback)
   - Po kliknuti na button (pomocka - onClick)
+
+Riesenie: https://github.com/branecko/i-am-bored/pull/2/files 
 
 3. **Kniznica komponentov React-bootstrap**
 
@@ -96,6 +100,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   - pomocou grid vieme lahko navrhnut rozlozenie stranky pomocou riadkov/stlpcov https://react-bootstrap.github.io/layout/grid/
   - zoznam komponentov: https://react-bootstrap.github.io/components/alerts
 
+Riesenie: https://github.com/branecko/i-am-bored/pull/3/files 
+
 4. **CSS STYLING** 
 
 Pridajte css styly do tejto React aplikacie. 
@@ -120,6 +126,8 @@ export const Header() {
   return <img src={logo} alt="Logo" />;
 }
 ```
+
+Riesenie: https://github.com/branecko/i-am-bored/pull/4/files 
 
 ## CO DALEJ ??
 - rozsirte appku o dalsiu funkcionalitu ak chcete (mne sa uz minuli napady)
